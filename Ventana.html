@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tarea Grupal - HTML5</title>
+
+  <!-- Estilos CSS para la apariencia visual -->
+  <style>
+    body {
+      font-family: Arial, sans-serif; /* Fuente legible */
+      background: linear-gradient(to right, #eef, #cce); /* Fondo con degradado */
+      text-align: center; /* Centra el contenido */
+      padding: 50px; /* Espaciado interno */
+    }
+
+    h1 {
+      color: #333; /* Color oscuro para el título */
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #0078D7; /* Azul estilo Windows */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    input, select {
+      padding: 8px;
+      font-size: 14px;
+      margin-top: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    img {
+      width: 150px;
+      margin: 20px auto;
+      border-radius: 10px;
+      display: block; /* Asegura que la imagen esté encima del texto */
+    }
+
+    ul {
+      list-style-type: square; /* Viñetas cuadradas */
+      text-align: left;
+      display: inline-block; /* Permite centrar la lista */
+      margin-top: 20px;
+    }
+
+    #mensaje {
+      font-weight: bold;
+      margin-top: 20px;
+      /* Se elimina el color fijo para permitir cambio dinámico */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Título principal -->
+  <h1>Aplicación HTML5 con Git GUI</h1>
+
+  <!-- Imagen institucional -->
+  <img src="https://utp.ac.pa/sites/default/files/documentos/2024/imagen/6_logo_utp_-_rgb_oficial.png" alt="Imagen decorativa"><br>
+
+  <h3>Programa que muestra el nombre y color favorito</h2>
+
+  <!-- Campo de entrada para el nombre -->
+  <label for="nombre">Escribe tu nombre:</label><br>
+  <input type="text" id="nombre"><br><br>
+
+  <!-- Menú desplegable para elegir color favorito -->
+  <label for="color">Elige tu color favorito:</label><br>
+  <select id="color">
+    <option value="Azul">Azul</option>
+    <option value="Rojo">Rojo</option>
+    <option value="Verde">Verde</option>
+  </select><br><br>
+
+  <!-- Botón que activa la función mostrarMensaje() -->
+  <button onclick="mostrarMensaje()">Mostrar mensaje</button>
+
+  <!-- Área donde se mostrará el mensaje personalizado -->
+  <p id="mensaje"></p>
+
+  <!-- Lista de tareas del grupo -->
+  <h2>Lista de tareas del grupo</h2>
+  <ul>
+    <li>Instalar Git GUI</li>
+    <li>Crear repositorio</li>
+    <li>Desarrollar aplicación HTML5</li>
+    <li>Hacer commits con Git GUI</li>
+    <li>Presentar el proyecto</li>
+  </ul>
+
+  <!-- Script JavaScript para manejar la interacción -->
+  <script>
+    function mostrarMensaje() {
+      // Captura el valor del campo de nombre
+      const nombre = document.getElementById("nombre").value;
+
+      // Captura el color seleccionado en el menú
+      const color = document.getElementById("color").value;
+
+      // Referencia al elemento donde se mostrará el mensaje
+      const mensaje = document.getElementById("mensaje");
+
+      // Muestra el mensaje personalizado
+      mensaje.textContent = `¡Hola, ${nombre}! Tu color favorito es ${color}.`;
+
+      // Diccionario de colores en formato hexadecimal
+      const colores = {
+        Azul: "#0078D7",
+        Rojo: "#D70000",
+        Verde: "#008000"
+      };
+
+      // Aplica el color dinámico al texto del mensaje
+      mensaje.style.color = colores[color] || "#000"; // Negro si no se encuentra
+    }
+  </script>
+
+</body>
+</html>
